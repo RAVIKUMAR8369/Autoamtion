@@ -10,12 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class ScrollWindow {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.edgedriver().setup();
         WebDriver driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.calculator.net/");
         JavascriptExecutor js=(JavascriptExecutor)driver;
+        Thread.sleep(4000);
        js.executeScript("window.scrollby(0,800)");
 
 
